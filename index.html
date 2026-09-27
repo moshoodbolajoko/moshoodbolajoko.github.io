@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moshood Bolajoko — BA / PM / PMO Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F4EF;
+    --ink:#16212D;
+    --body:#3C4550;
+    --line:#D9D6CB;
+    --accent:#9C5A18;
+    --accent-quiet:#EFE6D8;
+    --slate:#41586B;
+    --max:760px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--body);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+  }
+  a{color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent);}
+  a:hover{opacity:0.75;}
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+
+  header.hero{
+    padding:72px 0 40px;
+    border-bottom:1px solid var(--line);
+  }
+  .ref{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--slate);
+    letter-spacing:0.02em;
+    margin-bottom:18px;
+  }
+  h1{
+    font-family:'Newsreader', serif;
+    font-weight:600;
+    font-size:44px;
+    line-height:1.08;
+    margin:0 0 10px;
+    color:var(--ink);
+  }
+  .role-line{
+    font-size:17px;
+    color:var(--slate);
+    margin:0 0 22px;
+    max-width:52ch;
+  }
+  .contact-strip{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--body);
+    display:flex;
+    flex-wrap:wrap;
+    gap:4px 18px;
+  }
+  .contact-strip a{border-bottom:1px solid var(--line); color:var(--body);}
+
+  section{padding:44px 0; border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+
+  .section-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--accent);
+    margin:0 0 20px;
+  }
+
+  .lede{
+    font-family:'Newsreader', serif;
+    font-size:21px;
+    line-height:1.5;
+    color:var(--ink);
+    max-width:56ch;
+    margin:0 0 8px;
+  }
+
+  .project{
+    padding:28px 0;
+    border-top:1px solid var(--line);
+  }
+  .project:first-of-type{border-top:none; padding-top:8px;}
+  .project-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:6px;
+    flex-wrap:wrap;
+  }
+  .project-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--accent);
+  }
+  .project h3{
+    font-family:'Newsreader', serif;
+    font-weight:600;
+    font-size:22px;
+    margin:0;
+    color:var(--ink);
+  }
+  .project .sector{
+    font-size:13px;
+    color:var(--slate);
+    font-family:'IBM Plex Mono', monospace;
+  }
+  .project ul{
+    margin:14px 0 10px;
+    padding-left:20px;
+  }
+  .project li{margin-bottom:6px;}
+  .project .outcome{
+    margin-top:10px;
+    padding:12px 16px;
+    background:var(--accent-quiet);
+    border-left:2px solid var(--accent);
+    font-size:14.5px;
+    color:var(--ink);
+  }
+
+  .artefact-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+  .artefact{
+    border:1px solid var(--line);
+    padding:20px;
+  }
+  .artefact-title{
+    font-family:'Newsreader', serif;
+    font-size:18px;
+    color:var(--ink);
+    margin:0 0 6px;
+  }
+  .artefact-note{
+    font-size:14px;
+    color:var(--slate);
+    margin:0 0 14px;
+  }
+  .artefact-slot{
+    border:1px dashed var(--line);
+    background:#fff;
+    min-height:160px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#A6A196;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    text-align:center;
+    padding:18px;
+  }
+
+  table.sessions{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14.5px;
+  }
+  table.sessions th{
+    text-align:left;
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:500;
+    font-size:12px;
+    color:var(--slate);
+    border-bottom:1px solid var(--line);
+    padding:0 10px 10px 0;
+  }
+  table.sessions td{
+    padding:12px 10px 12px 0;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  table.sessions td.date{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--slate);
+    white-space:nowrap;
+  }
+
+  .skills-cols{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px 40px;
+  }
+  .skills-cols h4{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--slate);
+    font-weight:500;
+    margin:18px 0 8px;
+  }
+  .skills-cols ul{
+    margin:0 0 4px;
+    padding-left:18px;
+  }
+  .skills-cols li{margin-bottom:5px; font-size:14.5px;}
+
+  footer{
+    padding:40px 0 60px;
+    font-size:13.5px;
+    color:var(--slate);
+  }
+
+  @media (max-width:600px){
+    h1{font-size:34px;}
+    .skills-cols{grid-template-columns:1fr;}
+    header.hero{padding:48px 0 32px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="ref">PORTFOLIO — REV. <span id="rev-date"></span></div>
+    <h1>Moshood Bolajoko</h1>
+    <p class="role-line">Business Analyst &amp; Project Manager — MSc Project Management (Distinction). A working record of requirements, process documentation, and delivery across four training-programme projects.</p>
+    <div class="contact-strip">
+      <span>Wallasey, Merseyside, UK</span>
+      <a href="mailto:your.email@example.com">your.email@example.com</a>
+      <a href="https://linkedin.com/in/your-handle" target="_blank">linkedin.com/in/your-handle</a>
+    </div>
+  </header>
+
+  <section id="overview">
+    <p class="section-label">01 — Overview</p>
+    <p class="lede">A multi-sector background in digital marketing and operational security, now applied to structured Business Analysis and Project Management practice.</p>
+    <p>Currently completing a work-experience programme producing BA/PM deliverables — requirements specifications, MoSCoW-prioritised backlogs, UML diagrams, gap analyses and swimlane process maps — across four concurrent projects. This page is a working record of that output: the artefacts, the sessions attended, and the reasoning behind each.</p>
+  </section>
+
+  <section id="projects">
+    <p class="section-label">02 — Projects</p>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-num">01</span>
+        <h3>Travel &amp; Tourism Booking Platform ("Project Impact")</h3>
+      </div>
+      <div class="sector">Sector: Travel · WordPress-based delivery</div>
+      <ul>
+        <li>Structured the product backlog into 7 epics and 56 features, covering package management, search &amp; filtering, destination galleries, booking enquiries, reviews, SEO/GDPR compliance, and platform quality</li>
+        <li>Wrote 36 high-level business requirements (23 functional, 13 non-functional), each MoSCoW-prioritised</li>
+        <li>Authored user stories with Gherkin-syntax acceptance criteria for every feature — see sample artefact below</li>
+      </ul>
+      <div class="outcome">Outcome: A fully MoSCoW-prioritised, testable backlog spanning 7 epics — giving stakeholders clear, negotiable scope before a single line of development started.</div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-num">02</span>
+        <h3>Primark Digital Shopping App</h3>
+      </div>
+      <div class="sector">Sector: Retail · Digital product</div>
+      <ul>
+        <li>Authored UML diagrams to map user flows and system components</li>
+        <li>Conducted gap analysis between stated requirements and existing process</li>
+        <li>[Add: specific feature, stakeholder, or constraint from this project]</li>
+      </ul>
+      <div class="outcome">Outcome: [replace with a real, specific result]</div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-num">03</span>
+        <h3>Charity Fundraiser Concert</h3>
+      </div>
+      <div class="sector">Sector: Events · Non-profit</div>
+      <ul>
+        <li>Produced a swimlane diagram mapping roles across the event-delivery process</li>
+        <li>Applied the PREP framework to structure stakeholder interviews</li>
+        <li>[Add: specific feature, stakeholder, or constraint from this project]</li>
+      </ul>
+      <div class="outcome">Outcome: [replace with a real, specific result]</div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-num">04</span>
+        <h3>Healthcare ERP System</h3>
+      </div>
+      <div class="sector">Sector: Healthcare · Enterprise systems</div>
+      <ul>
+        <li>Documented requirements specifications for cross-departmental workflows</li>
+        <li>Peer-reviewed teammates' deliverables for consistency and accuracy</li>
+        <li>[Add: specific feature, stakeholder, or constraint from this project]</li>
+      </ul>
+      <div class="outcome">Outcome: [replace with a real, specific result]</div>
+    </div>
+  </section>
+
+  <section id="artefacts">
+    <p class="section-label">03 — Artefacts</p>
+    <p class="lede">Sample deliverables from the above projects, sanitised of client-identifying detail.</p>
+    <div class="artefact-grid">
+      <div class="artefact">
+        <p class="artefact-title">MoSCoW-prioritised epic backlog</p>
+        <p class="artefact-note">From "Project Impact" — Travel &amp; Tourism Showcase Platform. Priority follows MoSCoW; each epic breaks down into individually prioritised features (56 total).</p>
+        <table class="sessions">
+          <thead><tr><th>Epic</th><th>Name</th><th>Features</th></tr></thead>
+          <tbody>
+            <tr><td class="date">EP01</td><td>Travel Package &amp; Admin Workflow Management</td><td>8</td></tr>
+            <tr><td class="date">EP02</td><td>Search, Filter &amp; Browse</td><td>7</td></tr>
+            <tr><td class="date">EP03</td><td>Destination Galleries</td><td>7</td></tr>
+            <tr><td class="date">EP04</td><td>Booking &amp; Enquiry Management</td><td>12</td></tr>
+            <tr><td class="date">EP05</td><td>Customer Reviews &amp; Testimonials</td><td>5</td></tr>
+            <tr><td class="date">EP06</td><td>SEO &amp; GDPR Compliance</td><td>7</td></tr>
+            <tr><td class="date">EP07</td><td>Platform Quality &amp; Performance</td><td>10</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="artefact">
+        <p class="artefact-title">User story with Gherkin acceptance criteria</p>
+        <p class="artefact-note">Sample entry from the product backlog — every feature was broken into a user story with Given/When/Then acceptance criteria before build.</p>
+        <div style="border:1px solid var(--line); padding:16px; font-size:14px; background:#fff;">
+          <p style="margin:0 0 8px;"><strong>US-04.1 — Booking Enquiry Form</strong> <span style="color:var(--slate); font-family:'IBM Plex Mono',monospace; font-size:12px;">Must Have</span></p>
+          <p style="margin:0 0 10px; font-style:italic; color:var(--ink);">As a visitor, I want to complete and submit a booking enquiry form on a package page without any payment step, so that I can express my interest and the operator can contact me to arrange my booking.</p>
+          <p style="margin:0; font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.7; color:var(--body);">
+            GIVEN I am on a package page and click "Book Now / Enquire"<br>
+            WHEN the form loads<br>
+            THEN I see fields for full name, email, phone, preferred dates, party size, and package of interest<br><br>
+            GIVEN I complete all required fields and submit<br>
+            WHEN the form processes<br>
+            THEN I see an on-screen confirmation and no payment step is presented
+          </p>
+        </div>
+      </div>
+      <div class="artefact">
+        <p class="artefact-title">UML diagram</p>
+        <p class="artefact-note">Replace with a diagram showing user flow or system components.</p>
+        <div class="artefact-slot">[ Insert UML diagram — e.g. uml-diagram.png ]</div>
+      </div>
+      <div class="artefact">
+        <p class="artefact-title">Swimlane process map</p>
+        <p class="artefact-note">Replace with a diagram showing role handoffs across a process.</p>
+        <div class="artefact-slot">[ Insert swimlane diagram — e.g. swimlane.png ]</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lessons">
+    <p class="section-label">04 — Lessons Learnt</p>
+    <p class="lede">Captured as a project team during the reporting period — a working discipline of reflecting on what worked and what didn't.</p>
+    <table class="sessions">
+      <thead><tr><th>Type</th><th>Observation</th><th>Action taken</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="date">Could do better</td>
+          <td>Technical issues with key project tools delayed completion of otherwise-finished activities and stage closure.</td>
+          <td>Confirm tool access and functionality early; escalate technical issues promptly.</td>
+        </tr>
+        <tr>
+          <td class="date">Could do better</td>
+          <td>Delays in resolving dependencies affected planned stage completion dates even when most deliverables were done.</td>
+          <td>Track critical dependencies closely; escalate unresolved blockers early.</td>
+        </tr>
+        <tr>
+          <td class="date">Worked well</td>
+          <td>The team completed and gained approval for most Initiate-stage deliverables during the reporting period.</td>
+          <td>Maintained the same approach to deliverable completion, review and approval.</td>
+        </tr>
+        <tr>
+          <td class="date">Worked well</td>
+          <td>A project-planning tool issue was identified, escalated to the programme office, and actively followed up.</td>
+          <td>Continued timely escalation and monitoring of technical dependencies.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="sessions">
+    <p class="section-label">05 — Training &amp; Sessions Attended</p>
+    <p class="lede">A record of structured learning and stakeholder sessions during the programme.</p>
+    <table class="sessions">
+      <thead>
+        <tr><th>Date</th><th>Session</th><th>Note</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="date">[Date]</td>
+          <td>[Session or meeting name]</td>
+          <td>[One line on what it covered or produced]</td>
+        </tr>
+        <tr>
+          <td class="date">[Date]</td>
+          <td>[Session or meeting name]</td>
+          <td>[One line on what it covered or produced]</td>
+        </tr>
+        <tr>
+          <td class="date">[Date]</td>
+          <td>[Session or meeting name]</td>
+          <td>[One line on what it covered or produced]</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="skills">
+    <p class="section-label">06 — Skills &amp; Certifications</p>
+    <div class="skills-cols">
+      <div>
+        <h4>Practice</h4>
+        <ul>
+          <li>Requirements gathering &amp; elicitation</li>
+          <li>MoSCoW prioritisation</li>
+          <li>UML &amp; swimlane process mapping</li>
+          <li>Gap analysis</li>
+          <li>Stakeholder management (PREP framework)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Certifications</h4>
+        <ul>
+          <li>MSc Project Management (Distinction) — University of Salford</li>
+          <li>Google Cybersecurity Certificate</li>
+          <li>SIA Door Supervisor Licence</li>
+          <li>SIA CCTV Licence</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Moshood Bolajoko — Business Analyst / Project Manager / PMO Analyst. Full CV available on request.</p>
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById('rev-date').textContent = new Date().toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
+</script>
+
+</body>
+</html>
